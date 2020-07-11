@@ -7,10 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NguCarouselModule } from '@ngu/carousel';
 import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features/features.component';
+import { OurWorksComponent } from './our-works/our-works.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FeaturesComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    FeaturesComponent,
+    OurWorksComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +25,7 @@ import { FeaturesComponent } from './features/features.component';
     MaterialModule,
     FontAwesomeModule,
     FlexLayoutModule,
+    NguCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
