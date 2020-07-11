@@ -11,12 +11,16 @@ import { NguCarouselModule } from '@ngu/carousel';
 import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features/features.component';
 import { OurWorksComponent } from './our-works/our-works.component';
+import { OurServicesComponent } from './our-services/our-services.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FeaturesComponent,
     OurWorksComponent,
+    OurServicesComponent,
+    TestimonialsComponent,
   ],
   imports: [
     BrowserModule,
