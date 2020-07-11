@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("https://cdn.quilljs.com/1.2.2/quill.snow.css");
+@import url("https://cdn.quilljs.com/1.2.2/quill.bubble.css");
+
+@import "app/theme/styles/base";
+@import "app/theme/styles/spaces";
+@import "app/theme/styles/libs-override";
+@import "app/theme/styles/theme";
+@import "app/theme/styles/gradients";
+@import "app/theme/styles/rtl";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.pricing-header {
+  background: #ff4081;
+  color: white;
+}
+
+.pricing-card {
+  border-top: 4px solid #ff4081;
+}
+
+.pricing-title {
+  text-transform: uppercase;
+}
