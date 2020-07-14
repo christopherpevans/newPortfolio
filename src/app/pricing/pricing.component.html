@@ -1,0 +1,31 @@
+<div id="pricing" class="mt-2 pt-3">
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="title-section p-2 mb-2"
+  >
+    <h1>Plans and Pricing</h1>
+    <p class="secondary-text-color">
+      Choose the plan that's best for your business.
+    </p>
+    <br />
+    <p>(Prices vary by platform.)</p>
+  </div>
+  <mat-tab-group class="pricing-tabs" mat-align-tabs="center">
+    <mat-tab label="WORDPRESS">
+      <ng-template mat-tab-label>
+        <fa-icon class="fa-3x" [icon]="faWordpress"></fa-icon>
+      </ng-template>
+      <app-wordpress></app-wordpress>
+    </mat-tab>
+    <!-- <mat-tab label="PRICES"><app-monthly></app-monthly></mat-tab> -->
+    <mat-tab label="SHOPIFY"><app-shopify></app-shopify></mat-tab>
+    <mat-tab label="WIX">
+      <ng-template mat-tab-label>
+        <fa-icon class="fa-3x" [icon]="faWix"></fa-icon>
+      </ng-template>
+      <app-wix></app-wix>
+    </mat-tab>
+    <mat-tab label="CUSTOM"><app-custom-site></app-custom-site></mat-tab>
+  </mat-tab-group>
+</div>
