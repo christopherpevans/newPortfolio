@@ -13,6 +13,11 @@ import { FeaturesComponent } from './features/features.component';
 import { OurWorksComponent } from './our-works/our-works.component';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { WordpressComponent } from './wordpress/wordpress.component';
+import { WixComponent } from './wix/wix.component';
+import { CustomSiteComponent } from './custom-site/custom-site.component';
+import { ShopifyComponent } from './shopify/shopify.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +26,11 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     OurWorksComponent,
     OurServicesComponent,
     TestimonialsComponent,
+    PricingComponent,
+    WordpressComponent,
+    WixComponent,
+    CustomSiteComponent,
+    ShopifyComponent,
   ],
   imports: [
     BrowserModule,
