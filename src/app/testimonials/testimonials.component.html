@@ -12,11 +12,7 @@
       <ngu-carousel [inputs]="clientsCarouselConfig" [dataSource]="clients">
         <ngu-tile *nguCarouselDef="let client; let j = index">
           <div class="client-item">
-            <img
-              style="width: 100px; height: 100px;"
-              [src]="client"
-              alt="image"
-            />
+            <img [src]="client" alt="image" />
           </div>
         </ngu-tile>
         <!-- <button mat-mini-fab NguCarouselPrev class="arrow-btn prev"><mat-icon>keyboard_arrow_left</mat-icon></button>
@@ -31,12 +27,7 @@
   >
     <ngu-tile *nguCarouselDef="let testimonial; let j = index">
       <mat-card class="testimonial-item">
-        <img
-          style="width: 100px; height: 100px;"
-          [src]="testimonial.image"
-          alt="image"
-          class="mat-elevation-z2"
-        />
+        <img [src]="testimonial.image" alt="image" class="mat-elevation-z2" />
         <p class="text secondary-text-color my-3" id="testText">
           "{{ testimonial.text }}"
         </p>
