@@ -25,6 +25,9 @@ import { ShopifyComponent } from './shopify/shopify.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormSubmissionComponent } from './shared/form-submission.component';
 import { config } from '../config';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,8 @@ import { config } from '../config';
     AgmCoreModule.forRoot({
       apiKey: config.key,
     }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   entryComponents: [FormSubmissionComponent],
   providers: [],
