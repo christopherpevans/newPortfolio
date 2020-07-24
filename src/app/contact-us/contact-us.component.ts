@@ -11,6 +11,11 @@ import { ContactService } from '../services/contact.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FormSubmissionComponent } from '../shared/form-submission.component';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contact-us',
@@ -22,15 +27,15 @@ export class ContactUsComponent implements OnInit {
   public lng = -95.6668;
   public zoom = 12;
   public contactForm: FormGroup;
-
-  model = new Contact('', '', '', '');
-  contact: any[] = [];
+  contacts: Observable<Contact[]>;
+  contactCollection: AngularFirestoreCollection<Contact>;
 
   constructor(
     public formBuilder: FormBuilder,
     private contactService: ContactService,
     public snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    public afs: AngularFirestore
   ) {}
 
   ngOnInit() {
@@ -40,14 +45,13 @@ export class ContactUsComponent implements OnInit {
       phone: ['', Validators.required],
       description: ['', Validators.required],
     });
+    this.contactCollection = this.afs.collection('contacts');
+    this.contacts = this.contactCollection.valueChanges();
   }
 
   public onContactFormSubmit(values, formDirective: FormGroupDirective) {
     if (this.contactForm.valid) {
-      // this.contactService
-      //   .addContact(values)
-      //   .subscribe((contact) => this.contact.push(this.model));
-      console.log(values);
+      this.afs.collection('contacts').add(values);
       formDirective.resetForm();
       this.contactForm.reset();
 
@@ -56,5 +60,17 @@ export class ContactUsComponent implements OnInit {
         verticalPosition: 'top',
       });
     }
+  }
+
+  create(contact: Contact) {
+    this.contactService.createContact(contact);
+  }
+
+  update(contact: Contact) {
+    this.contactService.updateContact(contact);
+  }
+
+  delete(id: string) {
+    this.contactService.deleteContact(id);
   }
 }
