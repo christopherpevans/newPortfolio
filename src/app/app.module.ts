@@ -29,6 +29,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { UxComponent } from './ux/ux.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ContactUsComponent,
     FormSubmissionComponent,
     NavBarComponent,
+    PortfolioComponent,
+    UxComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
