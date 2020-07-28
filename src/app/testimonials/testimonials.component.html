@@ -27,11 +27,15 @@
   >
     <ngu-tile *nguCarouselDef="let testimonial; let j = index">
       <mat-card class="testimonial-item">
-        <img [src]="testimonial.image" alt="image" class="mat-elevation-z2" />
+        <!-- <img [src]="testimonial.image" alt="image" class="mat-elevation-z2" /> -->
         <p class="text secondary-text-color my-3" id="testText">
           "{{ testimonial.text }}"
         </p>
-        <h4 class="secondary-text-color">
+        <h4
+          id="testText"
+          class="secondary-text-color text-center"
+          style="font-size: 1.5em;"
+        >
           - {{ testimonial.author }}, {{ testimonial.company }}
         </h4>
       </mat-card>

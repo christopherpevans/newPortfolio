@@ -11,7 +11,7 @@ import { NguCarouselModule } from '@ngu/carousel';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features/features.component';
 import { OurWorksComponent } from './our-works/our-works.component';
@@ -28,6 +28,10 @@ import { config } from '../config';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { UxComponent } from './ux/ux.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,10 @@ import { environment } from '../environments/environment';
     ShopifyComponent,
     ContactUsComponent,
     FormSubmissionComponent,
+    NavBarComponent,
+    PortfolioComponent,
+    UxComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +64,7 @@ import { environment } from '../environments/environment';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: config.key,
     }),
