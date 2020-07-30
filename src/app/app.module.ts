@@ -12,6 +12,8 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { GtagModule } from 'angular-gtag';
+import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features/features.component';
 import { OurWorksComponent } from './our-works/our-works.component';
@@ -64,12 +66,14 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AuthModule,
     AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: config.key,
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    GtagModule.forRoot({ trackingId: 'UA-138997951-1', trackPageviews: true }),
   ],
   entryComponents: [FormSubmissionComponent],
   providers: [],

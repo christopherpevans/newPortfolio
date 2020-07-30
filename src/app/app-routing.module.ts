@@ -13,7 +13,7 @@ import { UxComponent } from './ux/ux.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // import { AdminRoutingModule } from './admin/admin-routing.module';
 
-// import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
   // { path: 'cart', component: ShoppingCartComponent , canActivate: [AuthGuard] },
   // { path: 'pricing/webdesign', component: WebDesignComponent },
   // { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-  // // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: '**', component: PageNotFoundComponent }
 ];
 
