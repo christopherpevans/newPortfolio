@@ -34,6 +34,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { UxComponent } from './ux/ux.component';
 import { FooterComponent } from './footer/footer.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { FooterComponent } from './footer/footer.component';
     PortfolioComponent,
     UxComponent,
     FooterComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,10 +14,12 @@ import { UxComponent } from './ux/ux.component';
 // import { AdminRoutingModule } from './admin/admin-routing.module';
 
 import { AuthGuard } from './auth/auth.guard';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'portfolio', component: PortfolioComponent },
+  { path: 'blog', component: BlogComponent },
   // { path: 'estimate', component: EstimateComponent },
   // { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
   { path: 'ux', component: UxComponent },
