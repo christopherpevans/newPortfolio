@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-header">
+          Manage Blogs
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Body</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let blog of blogs | async">
+                  <td>
+                    <img
+                      [src]="blog?.image"
+                      style="height: 25px; width: 25px;"
+                    />
+                  </td>
+                  <td>
+                    <a [routerLink]="['/blogs', blog.id]">
+                      {{ blog.title }}
+                    </a>
+                  </td>
+                  <td>{{ blog.body }}</td>
+                  <td>{{ blog.date * 1000 | date: "M/d" }}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="openDialog(blog)">
+                      X
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <mat-card class="card">
+        <form #blogForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="example-container">
+            <mat-form-field hintLabel="Min 3 characters">
+              <input
+                type="text"
+                matInput
+                #input
+                minlength="3"
+                placeholder="Title"
+                required
+                [(ngModel)]="model.title"
+                name="title"
+              />
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Image"
+                required
+                [(ngModel)]="model.image"
+                name="image"
+              />
+            </mat-form-field>
+            <br />
+            <br />
+            <mat-form-field hintLabel="Max 500 characters">
+              <textarea
+                matInput
+                placeholder="Body"
+                #input
+                maxlength="500"
+                [(ngModel)]="model.body"
+                name="body"
+              ></textarea>
+              <mat-hint align="end"
+                >{{ input.value?.length || 0 }}/500</mat-hint
+              >
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                [(ngModel)]="model.date"
+                name="date"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!blogForm.form.valid"
+          >
+            Submit
+          </button>
+        </form>
+      </mat-card>
+    </div>
+    <!-- <button class="btn btn-primary" (click)="save()">Save</button> -->
+  </div>
+</div>
