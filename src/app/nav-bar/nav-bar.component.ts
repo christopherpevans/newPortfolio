@@ -22,13 +22,13 @@ export class NavBarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.dataService.getContacts().subscribe((data) => {
-      if (data) {
-        this.badgeCount = data.length;
-      } else {
-        this.badgeCount = 0;
-      }
-    });
+    // this.dataService.getContacts().subscribe((data) => {
+    //   if (data) {
+    //     this.badgeCount = data.length;
+    //   } else {
+    //     this.badgeCount = 0;
+    //   }
+    // });
   }
 
   logout() {

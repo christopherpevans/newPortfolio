@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { GtagModule } from 'angular-gtag';
 import { AuthModule } from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
+import { DialogOverviewExampleDialogComponent } from './admin/manage-blogs/manage-blogs.component';
 import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features/features.component';
 import { OurWorksComponent } from './our-works/our-works.component';
@@ -56,6 +58,7 @@ import { BlogComponent } from './blog/blog.component';
     UxComponent,
     FooterComponent,
     BlogComponent,
+    DialogOverviewExampleDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +72,7 @@ import { BlogComponent } from './blog/blog.component';
     HttpClientModule,
     ReactiveFormsModule,
     AuthModule,
+    AdminModule,
     AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: config.key,
@@ -77,7 +81,10 @@ import { BlogComponent } from './blog/blog.component';
     AngularFireDatabaseModule,
     GtagModule.forRoot({ trackingId: 'UA-138997951-1', trackPageviews: true }),
   ],
-  entryComponents: [FormSubmissionComponent],
+  entryComponents: [
+    FormSubmissionComponent,
+    DialogOverviewExampleDialogComponent,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

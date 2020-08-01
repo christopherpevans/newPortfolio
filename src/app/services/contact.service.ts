@@ -8,7 +8,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root',
 })
 export class ContactService {
-  private contactUrl = 'https://contacts-api-app.herokuapp.com/contacts';
+  // private contactUrl = 'https://contacts-api-app.herokuapp.com/contacts';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,9 +20,9 @@ export class ContactService {
   constructor(private http: HttpClient, private firestore: AngularFirestore) {}
 
   // ADD CONTACT
-  addContact(model: Contact): Observable<Contact> {
-    return this.http.post<Contact>(this.contactUrl, model, this.httpOptions);
-  }
+  // addContact(model: Contact): Observable<Contact> {
+  //   // return this.http.post<Contact>(this.contactUrl, model, this.httpOptions);
+  // }
   // Get contacts
   getContacts() {
     return this.firestore.collection('contacts').snapshotChanges();
