@@ -30,7 +30,7 @@ export class ProjectService {
           // tslint:disable-next-line:max-line-length
           'Complete Shopify eCommerce store with the implementation of products. Setup of store payment processing through Stripe and PayPal. Installed Fraud app to protect the client from at-risk orders.',
         src: '../../assets/img/rsz_legacy7.jpg',
-        link: 'https://www.legacylooks.com',
+        link: 'https://www.envizn.io/portfolio',
       },
       {
         name: 'Bantr App',

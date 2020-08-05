@@ -19,8 +19,8 @@ import { BlogComponent } from './blog/blog.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'portfolio', component: PortfolioComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'blog/:id', component: BlogComponent },
+  { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
+  { path: 'blog/:id', component: BlogComponent, canActivate: [AuthGuard] },
   // { path: 'estimate', component: EstimateComponent },
   // { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
   { path: 'ux', component: UxComponent },

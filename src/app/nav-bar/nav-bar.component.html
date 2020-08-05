@@ -92,6 +92,7 @@
       <li class="nav-item">
         <a
           class="nav-link pull-right"
+          *ngIf="authService.isLoggedIn"
           routerLink="/blog"
           routerLinkActive="active-link"
           >Blog</a
