@@ -25,30 +25,30 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   // GET CUSTOMER
-  getContacts(): Observable<Contact[]> {
-    return this.http
-      .get<Contact[]>(this.contactUrl)
-      .pipe(tap((data) => (this.model = data)));
-  }
+  // getContacts(): Observable<Contact[]> {
+  //   return this.http
+  //     .get<Contact[]>(this.contactUrl)
+  //     .pipe(tap((data) => (this.model = data)));
+  // }
 
-  // ADD CONTACT
-  addContact(model: Contact): Observable<Contact> {
-    return this.http.post<Contact>(this.contactUrl, model, this.httpOptions);
-  }
+  // // ADD CONTACT
+  // addContact(model: Contact): Observable<Contact> {
+  //   return this.http.post<Contact>(this.contactUrl, model, this.httpOptions);
+  // }
 
   // GET CUSTOMER
-  getCustomers(): Observable<Customer[]> {
-    return this.http
-      .get<Customer[]>(this.customerUrl)
-      .pipe(tap((data) => (this.customer = data)));
-  }
+  // getCustomers(): Observable<Customer[]> {
+  //   return this.http
+  //     .get<Customer[]>(this.customerUrl)
+  //     .pipe(tap((data) => (this.customer = data)));
+  // }
 
   // ADD CUSTOMER
-  addCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(
-      this.customerUrl,
-      customer,
-      this.httpOptions
-    );
-  }
+  // addCustomer(customer: Customer): Observable<Customer> {
+  //   return this.http.post<Customer>(
+  //     this.customerUrl,
+  //     customer,
+  //     this.httpOptions
+  //   );
+  // }
 }

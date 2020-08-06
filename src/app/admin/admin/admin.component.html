@@ -1,0 +1,52 @@
+<div class="container text-center">
+  <h2>Admin Center</h2>
+</div>
+<div class="backround">
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer
+      #drawer
+      class="example-sidenav"
+      mode="side"
+      opened="false"
+      style="background-color: #3f51b5;"
+    >
+      <div class="container-1 text-white">
+        <button mat-flat-button color="primary" (click)="drawer.toggle()">
+          <a
+            routerLink="./"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Dashboard</a
+          >
+        </button>
+        <button mat-flat-button color="primary" (click)="drawer.toggle()">
+          <a routerLink="./blogs" routerLinkActive="active">Manage Blogs</a>
+        </button>
+        <button mat-flat-button color="primary" (click)="drawer.toggle()">
+          <a routerLink="./contacts" routerLinkActive="active"
+            >Manage Contacts</a
+          >
+        </button>
+        <button mat-flat-button color="primary" (click)="drawer.toggle()">
+          <a routerLink="./customers" routerLinkActive="active"
+            >Manage Customers</a
+          >
+        </button>
+        <button mat-flat-button color="primary" (click)="drawer.toggle()">
+          <a routerLink="./products" routerLinkActive="active"
+            >Manage Products</a
+          >
+        </button>
+        <button mat-flat-button color="primary" (click)="drawer.toggle()">
+          <a routerLink="./todo" routerLinkActive="active">Todo List</a>
+        </button>
+      </div>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>
+</div>
