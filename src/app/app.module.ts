@@ -37,6 +37,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { UxComponent } from './ux/ux.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
+import { FaqsComponent } from './faqs/faqs.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { BlogComponent } from './blog/blog.component';
     FooterComponent,
     BlogComponent,
     DialogOverviewExampleDialogComponent,
+    FaqsComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,11 +15,13 @@ import { UxComponent } from './ux/ux.component';
 
 import { AuthGuard } from './auth/auth.guard';
 import { BlogComponent } from './blog/blog.component';
+import { FaqsComponent } from './faqs/faqs.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
+  { path: 'frequently-asked-questions', component: FaqsComponent },
   { path: 'blog/:id', component: BlogComponent, canActivate: [AuthGuard] },
   // { path: 'estimate', component: EstimateComponent },
   // { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },

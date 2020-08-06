@@ -36,7 +36,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatNativeDateModule } from '@angular/material/core';
-
 @NgModule({
   imports: [
     MatButtonModule,
@@ -64,6 +63,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatGridListModule,
     LayoutModule,
     MatDialogModule,
+    MatExpansionModule,
   ],
   exports: [
     MatButtonModule,
@@ -90,6 +90,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatGridListModule,
     LayoutModule,
     MatDialogModule,
+    MatExpansionModule,
   ],
 })
 export class MaterialModule {}
