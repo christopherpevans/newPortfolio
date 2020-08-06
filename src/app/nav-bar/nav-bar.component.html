@@ -66,6 +66,14 @@
       <li class="nav-item">
         <a
           class="nav-link"
+          routerLink="/frequently-asked-questions"
+          routerLinkActive="active-link"
+          >FAQ's</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
           *ngIf="authService.isLoggedIn"
           routerLink="/customer"
           routerLinkActive="active-link"
@@ -89,6 +97,15 @@
           >Free Estimate</a
         >
       </li> -->
+      <li class="nav-item">
+        <a
+          class="nav-link pull-right"
+          *ngIf="authService.isLoggedIn"
+          routerLink="/blog"
+          routerLinkActive="active-link"
+          >Blog</a
+        >
+      </li>
       <!-- <li class="nav-item">
             <a class="nav-link" *ngIf="!authService.isLoggedIn" routerLink="/login" routerLinkActive="active-link">Login</a>
           </li> -->

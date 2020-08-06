@@ -35,7 +35,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LayoutModule } from '@angular/cdk/layout';
-
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   imports: [
     MatButtonModule,
@@ -43,6 +43,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
+    MatNativeDateModule,
     // MatBadgeModule,
     MatSortModule,
     MatMenuModule,
@@ -62,6 +63,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatGridListModule,
     LayoutModule,
     MatDialogModule,
+    MatExpansionModule,
   ],
   exports: [
     MatButtonModule,
@@ -88,6 +90,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatGridListModule,
     LayoutModule,
     MatDialogModule,
+    MatExpansionModule,
   ],
 })
 export class MaterialModule {}

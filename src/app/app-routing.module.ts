@@ -13,18 +13,23 @@ import { UxComponent } from './ux/ux.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // import { AdminRoutingModule } from './admin/admin-routing.module';
 
-// import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
+import { BlogComponent } from './blog/blog.component';
+import { FaqsComponent } from './faqs/faqs.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'portfolio', component: PortfolioComponent },
+  { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
+  { path: 'frequently-asked-questions', component: FaqsComponent },
+  { path: 'blog/:id', component: BlogComponent, canActivate: [AuthGuard] },
   // { path: 'estimate', component: EstimateComponent },
   // { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
   { path: 'ux', component: UxComponent },
   // { path: 'cart', component: ShoppingCartComponent , canActivate: [AuthGuard] },
   // { path: 'pricing/webdesign', component: WebDesignComponent },
   // { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-  // // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: '**', component: PageNotFoundComponent }
 ];
 

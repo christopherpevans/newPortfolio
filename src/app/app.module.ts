@@ -12,6 +12,10 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { GtagModule } from 'angular-gtag';
+import { AuthModule } from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
+import { DialogOverviewExampleDialogComponent } from './admin/manage-blogs/manage-blogs.component';
 import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features/features.component';
 import { OurWorksComponent } from './our-works/our-works.component';
@@ -32,6 +36,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { UxComponent } from './ux/ux.component';
 import { FooterComponent } from './footer/footer.component';
+import { BlogComponent } from './blog/blog.component';
+import { FaqsComponent } from './faqs/faqs.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +58,9 @@ import { FooterComponent } from './footer/footer.component';
     PortfolioComponent,
     UxComponent,
     FooterComponent,
+    BlogComponent,
+    DialogOverviewExampleDialogComponent,
+    FaqsComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,14 +73,20 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AuthModule,
+    AdminModule,
     AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: config.key,
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    GtagModule.forRoot({ trackingId: 'UA-138997951-1', trackPageviews: true }),
   ],
-  entryComponents: [FormSubmissionComponent],
+  entryComponents: [
+    FormSubmissionComponent,
+    DialogOverviewExampleDialogComponent,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
