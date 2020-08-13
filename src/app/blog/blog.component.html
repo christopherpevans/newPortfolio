@@ -1,5 +1,9 @@
 <div class="container mt-4">
-  <mat-card *ngFor="let blog of blogs | async" class="mb-3">
+  <mat-card
+    *ngFor="let blog of blogs | async"
+    class="mb-3"
+    [routerLink]="['/blog', blog.id]"
+  >
     <div class="row container">
       <img *ngIf="blog.image" [src]="blog?.image" style="height: 100px;" />
       <div class="col">

@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-manage-blogs',
   templateUrl: './manage-blogs.component.html',
-  styleUrls: ['./manage-blogs.component.css'],
+  styleUrls: ['./manage-blogs.component.scss'],
 })
 export class ManageBlogsComponent implements OnInit {
   model = new Blog('', '', null);
