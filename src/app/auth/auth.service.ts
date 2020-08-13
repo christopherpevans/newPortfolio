@@ -1,60 +1,42 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
+import { User } from 'firebase';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  isLoggedIn = false;
-  private authState: Observable<firebase.User>;
-  private currentUser: firebase.User = null;
+  user: User;
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
   constructor(public afAuth: AngularFireAuth, private router: Router) {
-    this.authState = this.afAuth.authState;
-    this.authState.subscribe((user) => {
+    this.afAuth.authState.subscribe((user) => {
       if (user) {
-        this.currentUser = user;
-        this.isLoggedIn = true;
+        this.user = user;
+        localStorage.setItem('user', JSON.stringify(this.user));
       } else {
-        this.currentUser = null;
-        this.isLoggedIn = false;
+        localStorage.setItem('user', null);
       }
     });
   }
 
-  getAuthState() {
-    return this.authState;
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user !== null;
   }
 
-  login(email: string, password: string) {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .catch(function (error) {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
-    // this.router.navigate(['/admin']);
+  async login(email: string, password: string) {
+    var result = await this.afAuth.signInWithEmailAndPassword(email, password);
+    this.router.navigate(['admin']);
   }
 
-  logout(): void {
-    this.isLoggedIn = false;
-    firebase
-      .auth()
-      .signOut()
-      .then(function () {})
-      .catch(function (error) {
-        // An error happened.
-      });
+  async logout() {
+    await this.afAuth.signOut();
+    localStorage.removeItem('user');
     this.router.navigate(['/']);
   }
 }
