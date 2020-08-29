@@ -3,3 +3,15 @@
   justify-content: center;
   align-content: center;
 }
+
+.card-body {
+  max-height: 300px;
+  overflow: auto;
+  text-align: left;
+}
+
+@media only screen and (max-width: 992px) {
+  .card-text {
+    text-align: center;
+  }
+}

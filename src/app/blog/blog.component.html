@@ -1,17 +1,17 @@
 <div class="container mt-4">
   <div class="row">
-    <div class="col-4">
-      <mat-card *ngFor="let blog of blogs | async" class="mb-3">
-        <div class="row container">
+    <div class="col-sm-4">
+      <mat-card *ngFor="let blog of blogs | async" class="mb-3 card-text">
+        <div class="row">
           <!-- <img *ngIf="blog.image" [src]="blog?.image" style="height: 100px;" /> -->
-          <div class="col-8">
+          <div class="col-sm-12">
             <h3>{{ blog.title }}</h3>
             <p>{{ blog.date * 1000 | date: "M/d" }}</p>
             <!-- <p>
               {{ blog.body }}
             </p> -->
           </div>
-          <div class="pull-right">
+          <div class="col-sm-12 pull-right">
             <button
               color="primary"
               mat-raised-button
@@ -23,21 +23,21 @@
         </div>
       </mat-card>
     </div>
-    <div class="col">
+    <div class="col-sm-8">
       <div *ngIf="!selectedBlog" class="spinner">
         <mat-spinner></mat-spinner>
       </div>
-      <mat-card class="mb-3" *ngIf="selectedBlog">
-        <div class="row container">
+      <mat-card class="mb-3 text-center" *ngIf="selectedBlog">
+        <div class="row">
           <img
             *ngIf="selectedBlog.image"
             [src]="selectedBlog.image"
-            style="height: 100px"
+            style="height: 100px; margin: auto"
           />
-          <div class="col-8">
+          <div class="col-sm-12">
             <h3>{{ selectedBlog.title }}</h3>
             <p>{{ selectedBlog.date * 1000 | date: "M/d" }}</p>
-            <p>
+            <p class="card-body">
               {{ selectedBlog.body }}
             </p>
           </div>
