@@ -38,6 +38,7 @@ import { UxComponent } from './ux/ux.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
 import { FaqsComponent } from './faqs/faqs.component';
+import { BlogShowComponent } from './blog-show/blog-show.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { FaqsComponent } from './faqs/faqs.component';
     BlogComponent,
     DialogOverviewExampleDialogComponent,
     FaqsComponent,
+    BlogShowComponent,
   ],
   imports: [
     BrowserModule,

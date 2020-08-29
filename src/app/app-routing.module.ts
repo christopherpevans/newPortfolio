@@ -12,7 +12,7 @@ import { UxComponent } from './ux/ux.component';
 // import { ProfileComponent } from './profile/profile.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // import { AdminRoutingModule } from './admin/admin-routing.module';
-
+import { BlogShowComponent } from './blog-show/blog-show.component';
 import { AuthGuard } from './auth/auth.guard';
 import { BlogComponent } from './blog/blog.component';
 import { FaqsComponent } from './faqs/faqs.component';
@@ -22,7 +22,11 @@ const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
   { path: 'frequently-asked-questions', component: FaqsComponent },
-  { path: 'blog/:id', component: BlogComponent, canActivate: [AuthGuard] },
+  {
+    path: 'blog/:id',
+    component: BlogShowComponent,
+    canActivate: [AuthGuard],
+  },
   // { path: 'estimate', component: EstimateComponent },
   // { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
   { path: 'ux', component: UxComponent },

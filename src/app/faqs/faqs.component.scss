@@ -10,3 +10,10 @@
 mat-panel-title {
   font-weight: 600;
 }
+
+.mat-expansion-panel-header:hover {
+  background: #303f9f !important;
+  mat-panel-title.mat-expansion-panel-header-title {
+    color: white;
+  }
+}
